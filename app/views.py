@@ -64,6 +64,8 @@ def dash():
 @app.route('/current.html', methods=['GET', 'POST'])
 def current():
 	listdeals=controller.getDeals(session['userid'])
+	#	results = [dict(busid=row[0], charid=row[1] , dealid=row[2], dealtext=row[3]) for row in c.fetchall()]
+	
 	return render_template('current.html',dealList=listdeals)
 
 
@@ -93,5 +95,5 @@ def createDeal():
 
 def formatDeal(deal):
 	datalist =deal.split('---')
-	retval="Donate $ %s to %s Get %s %s at %s. All Day %s"%(datalist[1],datalist[0],datalist[3],datalist[2],session['userid'],datalist[4])
+	retval="Donate $ %s to %s ! Get %s %s at %s. All Day %s"%(datalist[1],datalist[0],datalist[3],datalist[2],session['userid'],datalist[4])
 	return retval
