@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="assets/img/favicon.ico">
+
+    <title>LocalLocal | Dashboard for Business</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/dashboard.css" rel="stylesheet">
+    <link href="assets/css/fonts.css" rel="stylesheet">
+    <link href="assets/css/datepicker3.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">
+            <img src="assets/img/local-local-logo_white.png" width="149" height="40" style="margin-top:-10px;">
+          </a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Create a New Deal</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Business Support</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-4 col-md-3 sidebar">
+          <h4>Current Status</h4>
+
+
+
+          <h4>Past Offers</h4>
+
+
+
+        </div>
+
+        <div class="col-sm-8 col-sm-offset-4 col-md-9 col-md-offset-3 main">
+          <h1 class="page-header">Create a New Offer</h1>
+
+          <form role="form">
+            <div class="form-group">
+              <label for="offerCharity">Which charity or non-profit organization would you like to support?</label>
+              <select class="charities image-picker show-labels show-html">
+                <option data-img-src="assets/img/alamedacounty_foodbank.png" value="Alameda County Community Food Bank">Alameda County Community Food Bank</option>
+                <option data-img-src="assets/img/berkeley_humane.png" value="Berkeley Humane Society">Berkeley Humane Society</option>
+                <option data-img-src="assets/img/office_light.png" value="Office of Letters and Light">Office of Letters and Light</option>
+              </select>
+
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="alert alert-info">              
+                    <p><span class="glyphicon glyphicon-info-sign"></span> Don't see the charity or organization you want to support listed below? <a href="mailto:stephaniesnipes@gmail.com?subject=Organization Suggestion"><strong>Suggest it to us!</strong></a></p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+
+                    <label for="offerQuant">What is the quantity of the product?</label>
+                    <select id="offerQuant" class="form-control">
+                      <option value="">Select an option below</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                    </select>
+
+                    <label for="offerProduct">What product or service are you offering?</label>
+                    <input type="text" class="form-control" id="offerProduct" placeholder="Example: Free Beer">
+
+                    <label for="offerCost">How much will your offer cost?</label>
+                    <input type="text" class="form-control" id="offerCost" placeholder="Example: $10.00">
+
+                    <label for="offerDate">Offer Date:</label>
+                    <div class="input-group date">
+                      <input type="text" class="form-control offerDate"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                    </div>
+
+                </div>
+
+                <div class="col-md-5 col-md-offset-1 preview-offer">
+                  <h2 class="create-header">Preview Your Offer:</h2>
+                  <h3><span class="glyphicon glyphicon-heart-empty"></span>&nbsp;&nbsp;Offer</h3>
+                  <span class="preview-offerProduct"></span>
+
+                  <hr/>
+
+                  <h3><span class="glyphicon glyphicon-usd"></span>&nbsp;&nbsp;Donate</h3>
+                  <span class="preview-offerCost"></span>
+
+                  <hr/>
+
+                  <h3><span class="glyphicon glyphicon-thumbs-up"></span>&nbsp;&nbsp;Support</h3>
+                  <span class="preview-offerCharity">Alameda County Community Food Bank</span>
+                
+                  <hr/>
+
+                  <h3><span class="glyphicon glyphicon-calendar"></span>&nbsp;&nbsp;Offer Release Date</h3>
+                  <span class="preview-offerDate"></span>
+              
+                </div>
+
+              </div>
+
+            </div>
+
+            <hr/>
+            <button type="submit" class="btn create-deal btn-default">Create My Deal</button>
+          </form>
+
+        </div>
+
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="assets/js/masonry.pkgd.min.js"></script>
+    <script src="assets/js/image-picker.js"></script>
+    <script src="assets/js/bootstrap-datepicker.js"></script>
+    <script>
+      $(".charities").imagepicker( {
+        show_label  : true
+      })
+
+     $('.input-group.date').datepicker({
+        format: "mm/dd/yyyy",
+        todayBtn: true,
+        calendarWeeks: true,
+        autoclose: true,
+        todayHighlight: true
+      });
+
+     $(function() {
+        $('#offerQuant').on('change', function() {
+          setOfferProduct();
+        })
+        $('#offerProduct').on('input', function() {
+          setOfferProduct();
+        })
+     })
+
+    function setOfferProduct() {
+      var tmp = $('#offerQuant').val();
+      tmp += ' ' + $('#offerProduct').val();
+      $('.preview-offerProduct').html(tmp)
+    }
+
+     $('#offerCost').on('input', function() {
+        $('.preview-offerCost').html($(this).val());
+     })
+
+    $('.image-picker').on('change', function() {
+        $('.preview-offerCharity').html($(this).val());
+     })
+
+    $('.offerDate').on('change', function() {
+        $('.preview-offerDate').html($(this).val());
+    })
+
+    </script>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/docs.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
