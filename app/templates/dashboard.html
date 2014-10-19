@@ -7,17 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="assets/img/favicon.ico">
+    <link rel="icon" href="/static/img/favicon.ico">
 
     <title>LocalLocal | Dashboard for Business</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="/static/css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="assets/css/dashboard.css" rel="stylesheet">
-    <link href="assets/css/fonts.css" rel="stylesheet">
-    <link href="assets/css/datepicker3.css" rel="stylesheet">
+    <link href="/static/css/dashboard.css" rel="stylesheet">
+    <link href="/static/css/fonts.css" rel="stylesheet">
+    <link href="/static/css/datepicker3.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -38,7 +38,7 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="#">
-            <img src="assets/img/local-local-logo_white.png" width="149" height="40" style="margin-top:-10px;">
+            <img src="/static/img/local-local-logo_white.png" width="149" height="40" style="margin-top:-10px;">
           </a>
         </div>
         <div class="navbar-collapse collapse">
@@ -46,8 +46,7 @@
             <li class="active"><a href="dashboard.html">Dashboard</a></li>
             <li><a href="index.html">Create a New Deal</a></li>
             <li><a href="current.html">My Current Deals</a></li>
-            <li><a href="#">Settings</a></li>
-            <li><a href="#">Business Support</a></li>
+            <li><a class="bizSupport" data-toggle="modal" data-target="#bizSupport">Business Support</a></li>
           </ul>
         </div>
       </div>
@@ -69,16 +68,104 @@
         <div class="col-sm-8 col-sm-offset-4 col-md-9 col-md-offset-3 main">
           <h1 class="page-header">Your Business Dashboard</h1>
           <h3>Welcome Back, John!</h3>
- 
+          <p>
+            <button type="button" class="btn btn-default btn-sm">Inbox&nbsp;&nbsp;<span class="badge">2</span></button>
+            &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<strong>Berkeley Humane Society</strong> sent you a message: "Hi John, thanks so much for your donation last month..."&nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-default btn-xs">Read More</button></p>
+          
+          <hr/>
+
+          <div class="row">
+            <div class="col-md-8 dash-metrics">
+              <h4 class="dash-sub-header">Current Deal Metrics</h4>
+              <h3 class="dash-metrics"><strong>"Donate $10.00 to support the Berkeley Humane Society.<br/>Receive 1 Free Beer!"</strong></h3>
+              <h4 class="dash-metrics">
+                <strong>400 deals have been sold.</strong><br/>
+                Currently, <strong>$4000.00</strong> has been successfully raised.</h4>
+              <hr/>
+              <h4 class="dash-sub-header">Engagement Costs</h4>
+              <h4 class="campaign-costs"><strong>Cost Per Offer:</strong>&nbsp;&nbsp;$2.00</h4>
+              <h4 class="campaign-costs"><strong>Total Costs:</strong>&nbsp;&nbsp;$200.00</h4>
+              <h4 class="campaign-costs"><strong>Cost Per Engagement:</strong>&nbsp;&nbsp;$200.00 / 400 Supporters = $0.50</h4>
+            </div>
+
+            <div class="col-md-4">
+              <h4 class="dash-sub-header">Current Deal Availability</h4>
+              <img class="img-responsive img-center" src="/static/img/dashboard_availability.png">
+            </div>
+          </div>          
+
+          <hr/>
+
+          <div class="row">
+            <div class="col-md-8">
+              <h4 class="dash-sub-header">Current Deal Supporters</h4>
+              <img class="img-responsive" src="/static/img/dashboard_reachchart.png">
+            </div>
+            <div class="col-md-4">
+              <h4 class="dash-sub-header">Estimated Community Reach</h4>
+              <img class="img-responsive comm-reach-img" src="/static/img/dashboard_social.png">
+            </div>
+          </div>
+           <br/><br/>
         </div>
 
       </div>
     </div>
 
+    <!-- SUPPORT MODAL -->
+    <div class="modal fade" id="bizSupport" tabindex="-1" role="dialog" aria-labelledby="businessSupport" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h2 class="modal-title" id="businessSupport">
+              <strong>LocalLocal Business Support</strong>
+            </h2>
+          </div>
+          <div class="modal-body">
+            <p>If you have a question or a concern, LocalLocal support is only a click away.</p>
+            <h3><span class="glyphicon glyphicon-earphone"></span>&nbsp;&nbsp;Click to Call LocalLocal</h3>
+            <hr/>
+            <h3><span class="glyphicon glyphicon-envelope"></span>&nbsp;&nbsp;Email LocalLocal Support</h3>
+            <p>A LocalLocal representative will contact you within three business days.</p>
+            <br/>
+            <form class="form-horizontal" role="form">
+              <div class="form-group">
+                <label for="inputName3" class="col-sm-2 control-label">Name</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="inputName3" placeholder="First and Last Name">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                <div class="col-sm-10">
+                  <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputMessage3" class="col-sm-2 control-label">Message</label>
+                <div class="col-sm-10">
+                  <textarea class="form-control" rows="3"></textarea>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                  <button type="submit" class="btn btn-default">Send Message</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close Window</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="assets/js/masonry.pkgd.min.js"></script>
-    <script src="assets/js/image-picker.js"></script>
-    <script src="assets/js/bootstrap-datepicker.js"></script>
+    <script src="/static/js/masonry.pkgd.min.js"></script>
+    <script src="/static/js/image-picker.js"></script>
+    <script src="/static/js/bootstrap-datepicker.js"></script>
     <script>
       $(".charities").imagepicker( {
         show_label  : true
@@ -125,9 +212,9 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/docs.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/docs.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="/static/js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>
