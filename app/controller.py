@@ -16,6 +16,24 @@ def getDeals(busid):
 	print "results--------",results
 	return results
 
+def authorise(uname,password):
+	#conn = sqlite3.connect(app['DATABASE'])
+	conn = sqlite3.connect('app/dbase/localmain.db')
+
+	c = conn.cursor()
+	query='select busid from business where busid=\''+uname+'\' and password=\''+password+'\'' 
+	c.execute(query)
+	results = [dict(busid=row[0]) for row in c.fetchall()]
+	conn.close()
+	print "results--------",results,"------------------>>",len(results)
+	if len(results)<1:
+		return False
+
+	if(results[0]['busid']!=''):
+		return True
+	else:
+		return False
+
 def getdealdata(dealid):
 	#conn = sqlite3.connect(app['DATABASE'])
 	conn = sqlite3.connect('app/dbase/localmain.db')

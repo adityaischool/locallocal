@@ -7,17 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="assets/img/favicon.ico">
+    <link rel="icon" href="/static/img/favicon.ico">
 
     <title>LocalLocal | Dashboard for Business</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="/static/css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="assets/css/dashboard.css" rel="stylesheet">
-    <link href="assets/css/fonts.css" rel="stylesheet">
-    <link href="assets/css/datepicker3.css" rel="stylesheet">
+    <link href="/static/css/dashboard.css" rel="stylesheet">
+    <link href="/static/css/fonts.css" rel="stylesheet">
+    <link href="/static/css/datepicker3.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -27,6 +27,23 @@
   </head>
 
   <body>
+
+  <!--
+
+{% for item in dealList %}
+
+  <li>{{item.busid}}</li>
+  <li>{{item.charid}}</li>
+  {%set dealpath='viewdeal/'+item.dealid%}
+  <li><a href={{dealpath}}> {{item.dealid}}</a><br></li>
+</ul> 
+
+{% endfor %}
+
+
+
+
+  -->
 
     <div class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container-fluid">
@@ -38,7 +55,7 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="#">
-            <img src="assets/img/local-local-logo_white.png" width="149" height="40" style="margin-top:-10px;">
+            <img src="/static/img/local-local-logo_white.png" width="149" height="40" style="margin-top:-10px;">
           </a>
         </div>
         <div class="navbar-collapse collapse">
@@ -69,16 +86,25 @@
         <div class="col-sm-8 col-sm-offset-4 col-md-9 col-md-offset-3 main">
           <h1 class="page-header">My Current Deals</h1>
           <!-- DEAL INFORMATION GOES HERE -->
- 
+
+                  <ul>
+                
+                 {% for item in dealList %}
+
+                  <li>{{item.busid}}</li>
+                  <li>{{item.charid}}</li>
+                  {%set dealpath='viewdeal/'+item.dealid%}
+                  <li><a href={{dealpath}}> {{item.dealid}}</a><br></li>
+                </ul> 
         </div>
 
       </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="assets/js/masonry.pkgd.min.js"></script>
-    <script src="assets/js/image-picker.js"></script>
-    <script src="assets/js/bootstrap-datepicker.js"></script>
+    <script src="/static/js/masonry.pkgd.min.js"></script>
+    <script src="/static/js/image-picker.js"></script>
+    <script src="/static/js/bootstrap-datepicker.js"></script>
     <script>
       $(".charities").imagepicker( {
         show_label  : true
@@ -125,9 +151,9 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/docs.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/docs.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="/static/js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>

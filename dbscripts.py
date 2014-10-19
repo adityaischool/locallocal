@@ -60,7 +60,9 @@ def addBusData():
 	c = conn.cursor()
 	objtoadd= [('pappy','Pappy Beer','password','1627 University 94703'),('cocoman','Cup Cake Sams','password','214 University 94703'),('rooty','Root Hamburgers','password','212 Shattuck Berkeley California USA')]
 	query='insert into business values (?,?,?,?)'
-	c.executemany('insert into users values (?,?,?,?)',objtoadd)
+	c.executemany('insert into business values (?,?,?,?)',objtoadd)
+	conn.commit()
+	conn.close()
 def addCharTable(myname):
 	conn = sqlite3.connect("app/dbase/localmain.db")
 	c = conn.cursor()
@@ -245,12 +247,12 @@ if __name__ == '__main__':
 	#return results
 	#getdealdata('deal1')
 	#getdealdata()
-	#addTable('bi')
+	addBusData()
 	#addUserData()
 	#addDealTable('a')
 	#addDealData()
 	#addMappingTable("not")
-	getdeals()
+	#getdeals()
 	"""d= getBuds('aditya')
 	for e in d:
 		print e['fname']"""

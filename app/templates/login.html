@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -26,19 +27,6 @@
   </head>
 
   <body>
-<h3>
-
-Deal ID = {{dealid}}
-</h3>
-<ul>
-
-busname=row[0], dealid=row[1] , dealtext=row[2], busaddress=row[3], dealdate=row[4]
-
-<li>Business  -{{dataFordeal.busname}}</li>
-<li>Business  -{{dataFordeal.dealid}}</li>
-<li>Business  -{{dataFordeal.dealtext}}</li>
-<li>Business  -{{dataFordeal.busaddress}}</li>
-<li>Business  -{{dataFordeal.dealdate}}</li>
 
     <div class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container-fluid">
@@ -55,11 +43,9 @@ busname=row[0], dealid=row[1] , dealtext=row[2], busaddress=row[3], dealdate=row
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="dashboard.html">Dashboard</a></li>
-            <li class="active"><a href="index.html">Create a New Deal</a></li>
-            <li><a href="current.html">My Current Deals</a></li>
+            <li class="active"><a href="index.html">Login</a></li>
             <li><a href="#">Settings</a></li>
-            <li><a href="#">Business Support</a></li>
+            <li><a href="#">Browse</a></li>
           </ul>
         </div>
       </div>
@@ -68,11 +54,6 @@ busname=row[0], dealid=row[1] , dealtext=row[2], busaddress=row[3], dealdate=row
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-4 col-md-3 sidebar">
-          <h4>Current Status</h4>
-
-
-
-          <h4>Past Offers</h4>
 
 
 
@@ -81,24 +62,38 @@ busname=row[0], dealid=row[1] , dealtext=row[2], busaddress=row[3], dealdate=row
         <div class="col-sm-8 col-sm-offset-4 col-md-9 col-md-offset-3 main">
           <h1 class="page-header">Create a New Offer</h1>
 
-          <h3>
+          <form role="form" action="/login" method="post">
+            <div class="form-group">
+ 
+             <div class="row">
+                <div class="col-md-6">
 
-Deal ID = {{dealid}}
+                    <label for="uname">Login with User ID</label>
+                    <input type="text" class="form-control" id="uname" name="uname"placeholder="User Name">
 
-{{dataFordeal}}
-<!--</h3>
-<ul>
+                    <label for="password">How much will your offer cost?</label>
+                    <input type="password" class="form-control" id="password"  name="password" placeholder="Password">
 
-<li>Business  -{{dataFordeal.busname}}</li>
-<li>Business  -{{dataFordeal.dealid}}</li>
-<li>Business  -{{dataFordeal.dealtext}}</li>
-<li>Business  -{{dataFordeal.busaddress}}</li>
-<li>Business  -{{dataFordeal.dealdate}}</li>
-</ul>-->
+                    
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <hr/>
+            <button type="submit" class="btn create-deal btn-default">Login</button>
+            {% if mesg!='' %}
+                    <div class="alert alert-warning" role="alert"> {{mesg}}</div>
+                    {% endif %}
+
+          </form>
 
         </div>
 
       </div>
+
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
