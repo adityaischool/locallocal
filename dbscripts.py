@@ -60,7 +60,9 @@ def addBusData():
 	c = conn.cursor()
 	objtoadd= [('pappy','Pappy Beer','password','1627 University 94703'),('cocoman','Cup Cake Sams','password','214 University 94703'),('rooty','Root Hamburgers','password','212 Shattuck Berkeley California USA')]
 	query='insert into business values (?,?,?,?)'
-	c.executemany('insert into users values (?,?,?,?)',objtoadd)
+	c.executemany('insert into business values (?,?,?,?)',objtoadd)
+	conn.commit()
+	conn.close()
 def addCharTable(myname):
 	conn = sqlite3.connect("app/dbase/localmain.db")
 	c = conn.cursor()
@@ -84,7 +86,30 @@ def addDealTable(myname):
 	c.execute(querytoExec)
 	conn.commit()
 	conn.close()
-
+def getdealdata(dealid):
+	#conn = sqlite3.connect(app['DATABASE'])
+	conn = sqlite3.connect('app/dbase/localmain.db')
+	c = conn.cursor()
+	query='select b.name,d.dealid,d.dealtext,b.address,d.dealdate from deals d,business b where d.busid=b.busid and d.dealid=\''+dealid+'\''
+	#query='select d.dealid,d.dealdate,d.dealdate,d.dealdate,d.dealdate from deals d where d.dealid=\''+dealid+'\''
+	c.execute(query)
+	print query
+	results = [dict(busname=row[0], dealid=row[1] , dealtext=row[2], busaddress=row[3], dealdate=row[4]) for row in c.fetchall()]
+	conn.close()
+	print results
+	return results
+def getdeals():
+	#conn = sqlite3.connect(app['DATABASE'])
+	conn = sqlite3.connect('app/dbase/localmain.db')
+	c = conn.cursor()
+	#query='select b.name,d.dealid,d.dealtext,b.address,d.dealdate from deals d,business b where d.busid=b.busid and d.dealid=\''+dealid+'\''
+	query='select * from deals'
+	c.execute(query)
+	print query
+	results = [dict(busname=row[0], dealid=row[1] , dealtext=row[2], busaddress=row[3], dealdate=row[4]) for row in c.fetchall()]
+	conn.close()
+	print results
+	return results
 def addDealData():
 	conn = sqlite3.connect("app/dbase/localmain.db")
 	c = conn.cursor()
@@ -220,12 +245,14 @@ if __name__ == '__main__':
 	#qSatchel()
 	#conn.close()
 	#return results
-
-	#addTable('bi')
+	#getdealdata('deal1')
+	#getdealdata()
+	addBusData()
 	#addUserData()
 	#addDealTable('a')
-	addDealData()
+	#addDealData()
 	#addMappingTable("not")
+	#getdeals()
 	"""d= getBuds('aditya')
 	for e in d:
 		print e['fname']"""
