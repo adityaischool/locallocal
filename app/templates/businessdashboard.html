@@ -4,7 +4,8 @@
 
   <li>{{item.busid}}</li>
   <li>{{item.charid}}</li>
-  <li>{{item.dealid}}</li>
+  {%set dealpath='viewdeal/'+item.dealid%}
+  <li><a href={{dealpath}}> {{item.dealid}}</a><br></li>
 </ul> 
 
 {% endfor %}
