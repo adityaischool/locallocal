@@ -12,8 +12,12 @@ def auth():
 	else:
 		return redirect(url_for('main'))
 
-@app.route('/index.html', methods=['GET', 'POST'])
 @app.route('/', methods=['GET', 'POST'])
+def land():
+	return render_template("landing.html")
+
+
+@app.route('/index.html', methods=['GET', 'POST'])
 def index():
 	if (session['userid']!=""):
 		return render_template('index.html')
@@ -27,7 +31,7 @@ def logout():
 	return render_template('login.html',mesg="")
 
 
-
+@app.route('/login.html', methods=['GET', 'POST'])
 @app.route('/login', methods=['GET', 'POST'])
 def login():
 	if request.method == 'POST':
@@ -39,6 +43,8 @@ def login():
 			return render_template('index.html')
 		else:
 			return render_template('login.html',mesg="Failed Login !!!")
+	return render_template('login.html',mesg="")
+
 
 
 
@@ -65,7 +71,7 @@ def dash():
 def current():
 	listdeals=controller.getDeals(session['userid'])
 	#	results = [dict(busid=row[0], charid=row[1] , dealid=row[2], dealtext=row[3]) for row in c.fetchall()]
-	
+
 	return render_template('current.html',dealList=listdeals)
 
 
