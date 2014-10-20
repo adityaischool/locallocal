@@ -189,6 +189,21 @@ def addUserData():
 	conn.comaddUserDatamit()
 	conn.close()
 
+def deleteDeals():
+	conn = sqlite3.connect("app/dbase/localmain.db")
+	c = conn.cursor()
+
+
+	query='delete from deals'
+	c.execute(query)
+	#results = [dict(myname=row[0], fname=row[1], srcname=row[2]) for row in c.fetchall()]
+	#conn.close()
+	#return results
+
+	#querytoExec="create table hearstmain (teacher text not null,student text not null,obj1 text not null,obj2 text not null,obj3 text not null	);"
+	conn.commit()
+	conn.close()
+
 def addClassLogin():
 	conn = sqlite3.connect("app/dbase/localmain.db")
 	c = conn.cursor()
@@ -247,10 +262,10 @@ if __name__ == '__main__':
 	#return results
 	#getdealdata('deal1')
 	#getdealdata()
-	addBusData()
+	#deleteDeals()
 	#addUserData()
 	#addDealTable('a')
-	#addDealData()
+	addDealData()
 	#addMappingTable("not")
 	#getdeals()
 	"""d= getBuds('aditya')

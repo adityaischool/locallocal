@@ -90,8 +90,9 @@ def createDeal():
 		product = request.form['offerProduct']
 		quant = request.form['offerQuant']
 		offerdate = request.form['offerDate']
-		maxdeal=controller.getMaxDeal()
-		dealid=maxdeal[0]['dealid']+str(random.randint(101,200))
+		#maxdeal=controller.getMaxDeal()
+		#dealid=maxdeal[0]['dealid']+str(random.randint(101,200))
+		dealid='Deal'+str(random.randint(101,200))
 		dealstring=charname+"---"+price+"---"+product+"---"+quant+"---"+offerdate
 		print dealstring
 		session['userid']='pappy'
