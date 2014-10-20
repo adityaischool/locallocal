@@ -132,6 +132,53 @@ body {
   background: #E1F5C4;
 }
 
+.dash-sub-header {
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+}
+
+
+h3.dash-metrics {
+  color: #37aeac;
+}
+
+h4.dash-metrics {
+  font-size: 18px;
+  color: #37aeac;
+}
+
+h4.campaign-costs {
+  font-size: 20px;
+  color: #37aeac;
+}
+
+.comm-reach-img {
+  margin-left: 25px;
+}
+
+.bizSupport {
+  cursor: pointer;
+}
+
+body {
+  height:100%; 
+  overflow-y:hidden;
+}
+
+.home-bg {
+  background-image: url('../img/home_cover.jpg');
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+.btn-home {
+  position: absolute;
+
+}
+
 
 /*
  * Placeholder dashboard ideas
@@ -200,4 +247,196 @@ ul.thumbnails.image_picker_selector li .thumbnail img {
 ul.thumbnails.image_picker_selector li .thumbnail.selected {
   background: #E1F5C4;
   color: #319b99;
+}
+
+
+/*
+ * Globals
+ */
+
+/* Links */
+a, a:focus, a:hover {
+  color: #CFDD45;
+  cursor: pointer;
+}
+
+/* Custom default button */
+.btn-default, .btn-default:hover, .btn-default:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritence from `body` */
+  background-color: #fff;
+  border: 1px solid #fff;
+}
+
+/*
+ * Base structure
+ */
+
+html, body {
+  height: 100%;
+}
+
+.landing {
+  padding-top: 0px;
+}
+
+.landing h1 {
+  color: #FFF;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  font-size: 25px;
+}
+
+.landing .btn-home {
+}
+
+.landing hr {
+  margin-top: 37px;
+  margin-bottom: 37px;
+  margin-left: 40px;
+  margin-right: 40px;
+  border: 0;
+  border-top: 1px solid #666;
+}
+
+/* Extra markup and styles for table-esque vertical and horizontal centering */
+.site-wrapper {
+  display: table;
+  width: 100%;
+  height: 100%; /* For at least Firefox */
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-image: url('../img/home_cover_blank.jpg');
+  zoom: 1;
+  text-align: center;
+}
+.page-wrapper {
+  background-image: url('../img/home_cover_blank.jpg');
+}
+.site-wrapper-inner {
+  display: table-cell;
+  vertical-align: top;
+}
+.cover-container {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Padding for spacing */
+.inner {
+  padding: 30px;
+  color: #FFF;
+}
+
+/*
+ * Header
+ */
+.masthead-brand {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-size: 25px;
+  font-weight: 100;
+}
+.masthead-nav > li {
+  display: inline-block;
+}
+.masthead-nav > li + li {
+  margin-left: 20px;
+}
+.masthead-nav > li > a {
+  padding-right: 0;
+  padding-left: 0;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: bold;
+  color: #fff; /* IE8 proofing */
+  color: rgba(255,255,255,.75);
+  border-bottom: 2px solid transparent;
+}
+.masthead-nav > li > a:hover,
+.masthead-nav > li > a:focus {
+  color: #CFDD45;
+  background-color: transparent;
+  border-bottom-color: #CFDD45;
+}
+.masthead-nav > .active > a,
+.masthead-nav > .active > a:hover,
+.masthead-nav > .active > a:focus {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+@media (min-width: 768px) {
+  .masthead-brand {
+    float: left;
+  }
+  .masthead-nav {
+    float: right;
+  }
+}
+
+
+h4.modal-title, .modal-body {
+  color: #777;
+  text-shadow: none;
+}
+
+.modal-body a {
+  color: #003262;
+}
+
+/*
+ * Cover
+ */
+
+.cover {
+  padding: 0 20px;
+}
+.cover .btn-lg {
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+
+
+/*
+ * Footer
+ */
+
+.mastfoot {
+  color: #999; /* IE8 proofing */
+  color: rgba(255,255,255,.5);
+}
+
+/*
+ * Affix and center
+ */
+
+@media (min-width: 768px) {
+  /* Pull out the header and footer */
+  .masthead {
+    position: fixed;
+    top: 0;
+  }
+  .mastfoot {
+    position: fixed;
+    bottom: 0;
+  }
+  /* Start the vertical centering */
+  .site-wrapper-inner {
+    vertical-align: middle;
+  }
+  /* Handle the widths */
+  .masthead, .mastfoot, .cover-container {
+    width: 100%; /* Must be percentage or pixels for horizontal alignment */
+  }
+}
+
+@media (min-width: 992px) {
+  .masthead, .mastfoot, .cover-container {
+    width: 700px;
+  }
 }

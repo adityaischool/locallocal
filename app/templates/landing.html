@@ -4,10 +4,10 @@
     <head>
         <title>Welcome to LocalLocal</title>
         <!-- Bootstrap CSS -->
-        <link href="static/css/bootstrap.css" type="text/css" rel="stylesheet"/>
+        <link href="/static/css/bootstrap.css" type="text/css" rel="stylesheet"/>
         <!-- Custom styles for this template -->
-        <link href="static/css/dashboard.css" rel="stylesheet">
-        <link href="static/css/fonts.css" rel="stylesheet">
+        <link href="/static/css/dashboard.css" rel="stylesheet">
+        <link href="/static/css/fonts.css" rel="stylesheet">
         <!-- Google Fonts: Open Sans -->
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,700,400' rel='stylesheet' type='text/css'>
 
@@ -39,8 +39,10 @@
 
                         <br/>
                         <br/>
-                        <button href="/login.html" type="button" class="btn btn-default btn-lg">Business Log In</button>
-  
+                        <form method="get" action="/login.html">
+                        <button type="submit"  class="btn btn-default btn-lg">Business Log In</button>
+  </form>
+
                     </div>
 
                 </div>
